@@ -1,0 +1,8 @@
+{
+  "adjacent-to-tunnels": [0, 2, 4, 4, 6, 6, 9],
+  "adjacent-to-lakes": [0, 2, 4, 4, 6, 6, 9],
+  "adjacent-to-encounters": [0, 2, 4, 4, 6, 6, 9],
+  "on-tunnels": [0, 2, 4, 6, 6],
+  "in-a-row": [0, 2, 4, 6, 9],
+  "on-tundras-farms": [0, 2, 4, 6, 9]
+}
