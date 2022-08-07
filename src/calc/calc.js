@@ -32,3 +32,5 @@ const calculate = (input, multipliers = [], structureTile = []) => {
     scoreCoins
   );
 };
+
+export default calculate;

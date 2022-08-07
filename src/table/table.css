@@ -29,3 +29,8 @@
 .cell-input {
   padding: 0 2px;
 }
+
+.cell-score {
+  width: 52px;
+  padding: 0 4px;
+}
