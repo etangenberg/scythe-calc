@@ -1,31 +1,31 @@
 .table {
+  padding: 4px;
   /* border: solid 1px black; */
-  display: grid;
-  grid-template-rows: repeat(1fr);
-
 }
 
 .row {
-  display: grid;
+  display: flex;
   padding: 4px;
-  /* border: solid 1px red; */
-  grid-template-rows: auto;
-  grid-template-columns: auto auto;
 
 }
 
 .row-body {
   display: flex;
 
-  justify-content: space-around;
 }
 
 .row-header {
-  width: 70px;
+  width: 60px;
   text-align: right;
+  padding-right: 4px;
 }
 
 .player-cell {
   /* background-color: burlywood; */
   padding: 2px;
+  width: 52px;
+}
+
+.cell-input {
+  padding: 0 2px;
 }

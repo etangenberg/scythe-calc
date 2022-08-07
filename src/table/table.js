@@ -12,8 +12,8 @@ const Table = ({ playerCount, maxPlayerCount }) => {
       <div className='row-body'>
       {
         iterate.map((id) => (
-          <div key={id}>
-            <input type={type} className={`player-cell column-${header}`} />
+          <div key={id} className='cell-input'>
+            <input type={type} className={`player-cell column-${header}`} name={header}/>
           </div>
         ))
       }
