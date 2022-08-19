@@ -10,11 +10,11 @@ const calculate = (input, multipliers = [], structureTile = []) => {
     factory,
     structureScoringCount: scount,
     coins: icoins,
-  } = input = {};
+  } = input || {};
   
   const structureScoringCount = scount || 0;
   const stars = istars || 0;
-  const territories = (iterritories + (factory ? 2 : 0 )) || 0;
+  const territories = (iterritories + (iterritories && factory ? 2 : 0 )) || 0;
   const resources = iresources || 0;
   const coins = icoins | 0;
 

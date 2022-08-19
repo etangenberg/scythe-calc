@@ -3,3 +3,22 @@
 .player-count {
   font-family: ScytheFont; 
 }
+
+.table {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.player-cell {
+  max-width: 36px;
+  
+}
+
+.column {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.column-Name {
+  max-width: none;
+}
