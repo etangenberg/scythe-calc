@@ -7,17 +7,27 @@ import structureTiles from '../calc/structure-tiles.json';
 import './table.css';
 
 const clip = (v, min, max) => {
-  if (v < min) return min;
-  if (v > max) return max;
+  if (min !== undefined && v < min) return min;
+  if (max !== undefined && v > max) return max;
   return v;
 };
 
 const nameType = {
   Name: { convert: (v) => v },
-  'Inc. Factory': { convert: Boolean },
+  'Inc. Factory': { 
+    eventValue: ({ target: { checked } }) => checked, 
+    convert: (v) => v,
+  },
   Popularity: { min: 0, max: 18 },
   Stars: { min: 0, max: 6 },
-  default: { convert: (v) => parseInt(v, 10) },
+  Territorities: { min: 0 },
+  Coins: { min: 0 },
+  Structures: { min: 0 },
+  Resources: { min: 0 },
+  default: {
+    convert: (v) => parseInt(v, 10),
+    eventValue: ({ target: { value } }) => value, 
+  },
 }; 
 
 const Table = ({ playerCount, maxPlayerCount }) => {
@@ -35,10 +45,11 @@ const Table = ({ playerCount, maxPlayerCount }) => {
 
   const iterate = columnIds.slice(0, playerCount);
 
-  const onChange = (index, name) => ({ target: { value } }) => {
+  const onChange = (index, name) => (event) => {
     const typeSetting = nameType[name] ;
+    const eventValue = typeSetting?.eventValue || nameType.default.eventValue;
     const convert = typeSetting?.convert || nameType.default.convert;
-    const v = convert(value);
+    const v = convert(eventValue(event));
     const { min, max } = typeSetting || {};
     const newVal = (min !== undefined || max !== undefined) ? clip(v,min, max) : v;
     const newPlayerStats = {
